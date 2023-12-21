@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Preahvihear&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="body">
+    <h1>JOGO DA VELHA - MACHADÂMBAR</h1>
+
+    <!-- <div id="grid"></div> -->
+
+    <div class="inicio">
+      <div id="players" class="players">
+        <p>J1: <span id="jogador1">Jogador J1</span></p>
+        <input
+          id="inputJ1"
+          class="input-style"
+          oninput="updateText('jogador1', 'inputJ1')"
+          maxlength="11"
+        />
+        <p>J2: <span id="jogador2">Jogador J2</span></p>
+        <input
+          id="inputJ2"
+          class="input-style"
+          oninput="updateText('jogador2', 'inputJ2')"
+          maxlength="11"
+        />
+        <button id="next-button" class="button" onclick="goToIndex()">
+          Próximo
+        </button>
+      </div>
+    </div>
+
+    <script>
+      function updateText(pId, inputId) {
+        var inputValue = document.getElementById(inputId).value;
+        if (inputValue.length > 11) {
+          alert("O nome do jogador não pode ter mais de 11 caracteres!");
+          return;
+        }
+        if (inputValue === "") {
+          alert("O nome do jogador não pode ser vazio!");
+          return;
+        }
+        document.getElementById(pId).innerText = inputValue;
+      }
+
+      function goToIndex() {
+        if (
+          document.getElementById("inputJ1").value === "" ||
+          document.getElementById("inputJ2").value === ""
+        ) {
+          alert(
+            "Por favor, insira os nomes dos jogadores antes de prosseguir."
+          );
+          return;
+        }
+        localStorage.setItem(
+          "jogador1",
+          document.getElementById("inputJ1").value
+        );
+        localStorage.setItem(
+          "jogador2",
+          document.getElementById("inputJ2").value
+        );
+        location.href = "index.html";
+      }
+    </script>
+  </body>
+</html>

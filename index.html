@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Jogo da Velha</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Preahvihear&display=swap" rel="stylesheet">
-</html>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Preahvihear&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body class="body">
-    
-    <h1>
-        JOGO DA VELHA - MACHADÂMBAR
-    </h1>
-    
+  <body class="body" onload="updateNames()">
+    <h1>JOGO DA VELHA - MACHADÂMBAR</h1>
+
     <!-- <div id="grid"></div> -->
 
     <div class="centro">
-
-        <div id="infos" class="infos">
-            <!-- Jogador 1: <input type="text" id="jogador1" class="jogador1" placeholder="Nome do jogador 1">
+      <div id="infos" class="infos">
+        <!-- Jogador 1: <input type="text" id="jogador1" class="jogador1" placeholder="Nome do jogador 1">
             Jogador 2: <input type="text" id="jogador2" class="jogador2" placeholder="Nome do jogador 2"> -->
-            Jogador 1 (X): 0
-            Empate: 
-            Jogador 2 (O): 0
-        </div>
+        <p>J1 <span id="spanJ1"> Jogador 1</span>: 99</p>
+        <p>VS.</p>
+        <p>J2 <span id="spanJ2"> Jogador 2</span>: 99</p>
+      </div>
+      <div id="jogo" class="jogo">
+        Aqui vai ficar o "tabuleiro" do jogo, ainda vou adicionar
+      </div>
 
-        <div id="jogo" class="jogo">
-            Aqui vai ficar o "tabuleiro" do jogo, ainda vou adicionar
-        </div>
-        
-        <div id="actions" class="actions">
-            <p id = "p">Deseja reiniciar o jogo atual ou zerar o placar?</p>
-            <button id="reset" class="reset-button">
-                Reiniciar jogo atual
-            </button>
-            <button id="reset" class="reset-button">
-                Zerar o placar
-            </button>
-        </div>
-
+      <div id="actions" class="actions">
+        <p id="p">Deseja reiniciar o jogo atual ou zerar o placar?</p>
+        <button id="reset-button" class="button">Reiniciar jogo atual</button>
+        <button id="zero-button" class="button">Zerar o placar</button>
+      </div>
     </div>
 
-</body>
+    <script>
+      function updateNames() {
+        document.getElementById("spanJ1").innerText =
+          localStorage.getItem("jogador1");
+        document.getElementById("spanJ2").innerText =
+          localStorage.getItem("jogador2");
+      }
+    </script>
+  </body>
+</html>
