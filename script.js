@@ -1,5 +1,5 @@
 //funcoes inicio.html
-function updateText(pId, inputId) {
+function updateNome(pId, inputId) {
   var inputValue = document.getElementById(inputId).value;
   document.getElementById(pId).innerText = inputValue;
 }
@@ -26,8 +26,8 @@ function goToIndex() {
 }
 
 function inicioActions(pId, inputId1, inputId2){
-  updateText(pId, inputId1);
-  updateText(pId, inputId2);
+  updateNome(pId, inputId1);
+  updateNome(pId, inputId2);
   goToIndex();
 }
 // funcoes index.html
@@ -48,7 +48,7 @@ function tabuleiro() {
           }
 }
 
-function updateNames() {
+function updatePlayers() {
   document.getElementById("spanJ1").innerText =
     localStorage.getItem("jogador1");
   document.getElementById("spanJ2").innerText =
@@ -63,6 +63,13 @@ function resetGame() {
         })
 }
 
+// function zerarGame() {
+//   var zerarGame = document.getElementById("zero-button");
+//         zerarGame.addEventListener("click", function(){
+//           updateText();
+//         })
+// }
+
 function vitoriaCheck() {
   const vitorias = [
     [0, 1, 2],
@@ -76,7 +83,7 @@ function vitoriaCheck() {
   ];
   for (let vitoria of vitorias) {
     if(vitoria.every((index) => tabuleiro[index] === tabuleiro[vitoria[0]] && vitoria[index] !== null)) {
-      
+
     }
   }
 }
