@@ -10,12 +10,11 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Preahvihear&display=swap"
       rel="stylesheet"
     />
+    <script src="script.js"></script>
   </head>
 
   <body class="body">
     <h1>JOGO DA VELHA - MACHADÂMBAR</h1>
-
-    <!-- <div id="grid"></div> -->
 
     <p> Informe o nome dos jogadores (Jogador 1 começa jogando):</p>
     <div class="inicio">
@@ -34,38 +33,10 @@
           oninput="updateText('jogador2', 'inputJ2')"
           maxlength="11"
         />
-        <button id="next-button" class="button" onclick="goToIndex()">
+        <button id="next-button" class="button" onclick="inicioActions('jogador1', 'inputJ1', 'inputJ2')">
           Próximo
         </button>
       </div>
     </div>
-
-    <script id="inicio-actions">
-      function updateText(pId, inputId) {
-        var inputValue = document.getElementById(inputId).value;
-        document.getElementById(pId).innerText = inputValue;
-      }
-
-      function goToIndex() {
-        if (
-          document.getElementById("inputJ1").value === "" ||
-          document.getElementById("inputJ2").value === ""
-        ) {
-          alert(
-            "Por favor, insira os nomes dos jogadores antes de prosseguir."
-          );
-          return;
-        }
-        localStorage.setItem(
-          "jogador1",
-          document.getElementById("inputJ1").value
-        );
-        localStorage.setItem(
-          "jogador2",
-          document.getElementById("inputJ2").value
-        );
-        location.href = "index.html";
-      }
-    </script>
   </body>
 </html>
