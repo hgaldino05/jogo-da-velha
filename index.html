@@ -26,7 +26,22 @@
         <p>J2 <span id="spanJ2"> Jogador 2</span>: 99</p>
       </div>
       <div id="jogo" class="jogo">
-        Aqui vai ficar o "tabuleiro" do jogo, ainda vou adicionar
+        <script>
+          var jogo = document.getElementById("jogo");
+          var turno = "X";
+
+          for (var i = 0; i < 9; i++) {
+            var celula = document.createElement("div");
+            celula.classList.add("celulas");
+            celula.addEventListener("click", function (e) {
+              if (!e.target.textContent) {
+                e.target.textContent = turno;
+                turno = turno === "X" ? "O" : "X";
+              }
+            });
+            jogo.appendChild(celula);
+          }
+        </script>
       </div>
 
       <div id="actions" class="actions">
