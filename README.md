@@ -1,2 +1,10 @@
-# jogo-da-velha
-Repositório de JS, React e HTML/CSS com um jogo da velha, feito para o processo trainee da Orc'estra
+# Jogo da Velha Machadâmbar
+
+Clone o repositório
+
+Dentro do terminal, "navegue" até entrar na pasta do repositório
+
+Ainda no terminal use os comandos:
+
+npm install
+npm run dev
